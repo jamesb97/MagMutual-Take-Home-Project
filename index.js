@@ -31,18 +31,7 @@ app.get("/users", (req, res) => {
     res.json(jsonObj);
 });
 
-// Create a custom search endpoint
-app.get("/users/search", (req, res) => {
-    const { name } = req.query;
-    if (!name) {
-        return res.status(400).json({ error: "Name query parameter is required" });
-    }
-    const users = jsonObj.filter((user) => 
-        user.first_name.toLowerCase().includes(name.toLowerCase()) || 
-        user.last_name.toLowerCase().includes(name.toLowerCase())
-    );
-    res.json(users);
-});
+
 
 // Create an endpoint to return a list of users based on a specific profession
 app.get("/users/profession/:profession", (req, res) => {
@@ -82,6 +71,19 @@ app.post("/users", (req, res) => {
     const user = req.body;
     jsonObj.push(user);
     res.json(user);
+});
+
+// Create a custom search endpoint
+app.get("/users/search", (req, res) => {
+    const { name } = req.query;
+    if (!name) {
+        return res.status(400).json({ error: "Name query parameter is required" });
+    }
+    const users = jsonObj.filter((user) => 
+        user.first_name.toLowerCase().includes(name.toLowerCase()) || 
+        user.last_name.toLowerCase().includes(name.toLowerCase())
+    );
+    res.json(users);
 });
 
 app.listen(port, () => {
