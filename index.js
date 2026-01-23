@@ -26,21 +26,21 @@ csv()
 //     res.json(jsonObj);
 // });
 
-// Create an endpoint to return a list of users
+// Creating an endpoint to return a list of users
 app.get("/users", (req, res) => {
     res.json(jsonObj);
 });
 
 
 
-// Create an endpoint to return a list of users based on a specific profession
+// Creating an endpoint to return a list of users based on a specific profession
 app.get("/users/profession/:profession", (req, res) => {
     const profession = req.params.profession;
     const users = jsonObj.filter((user) => user.profession.toLowerCase() === profession.toLowerCase());
     res.json(users);
 });
 
-// Create an endpoint to return a list of users created between a date range
+// Creating an endpoint to return a list of users created between a date range
 app.get("/users/date-range/:startDate/:endDate", (req, res) => {
     const startDate = req.params.startDate;
     const endDate = req.params.endDate;
@@ -51,14 +51,14 @@ app.get("/users/date-range/:startDate/:endDate", (req, res) => {
     res.json(users);
 });
 
-// Create an endpoint to return a specific user
+// Creating an endpoint to return a specific user
 app.get("/users/:id", (req, res) => {
     const userId = req.params.id;
     const user = jsonObj.find((user) => user.user_id === userId);
     res.json(user);
 });
 
-// Create a custom endpoint
+// Creating a custom endpoint
 app.get("/custom", (req, res) => {
     const customData = {
         message: "This is a custom endpoint",
@@ -66,14 +66,14 @@ app.get("/custom", (req, res) => {
     res.json(customData);
 });
 
-//Create a custom endpoint to insert a new user
+// Creating a custom endpoint to insert a new user
 app.post("/users", (req, res) => {
     const user = req.body;
     jsonObj.push(user);
     res.json(user);
 });
 
-// Create a custom search endpoint
+// Creating a custom search endpoint
 app.get("/users/search", (req, res) => {
     const { name } = req.query;
     if (!name) {
