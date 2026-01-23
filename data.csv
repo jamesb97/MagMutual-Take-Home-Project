@@ -1,0 +1,5 @@
+user_id,first_name,last_name,profession,created_at, start_date, end_date
+1,John,Doe,Doctor,2022-01-01, 2022-01-01, 2022-01-01
+2,Jane,Smith,Doctor,2022-01-02, 2022-01-02, 2022-01-02
+3,Jackson,Johnson,Doctor,2022-01-03, 2022-01-03, 2022-01-03
+4,Jill,Johnson,Doctor,2022-01-04, 2022-01-04, 2022-01-04

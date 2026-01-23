@@ -1,0 +1,19 @@
+{
+  "name": "magmutual",
+  "version": "1.0.0",
+  "description": "magmutual",
+  "main": "script.js",
+  "scripts": {
+    "test": "node script.js"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "zdravkobozhkov",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.14",
+    "express": "^5.2.1"
+  }
+}
