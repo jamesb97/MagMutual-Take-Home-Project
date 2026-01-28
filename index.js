@@ -86,6 +86,17 @@ app.get("/users/search", (req, res) => {
     res.json(users);
 });
 
+// Deleting an endpoint
+app.delete("/users/:id", (req, res) => {
+    const userId = req.params.id;
+    const user = jsonObj.find((user) => user.user_id === userId);
+    if (!user) {
+        return res.status(404).json({ error: "User not found" });
+    }
+    jsonObj = jsonObj.filter((user) => user.user_id !== userId);
+    res.json(user);
+});
+
 app.listen(port, () => {
     console.log(`MagMutual app listening on port ${port}`);
 });
